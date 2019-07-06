@@ -20,10 +20,10 @@ class Element(ET.Element):
             super().__init__(self.__class__.__name__, attrib, **extra)
 
         for Child in self.__class__.__dict__.values():
-            if isinstance(Child, type) and issubclass(Child, Element):
-                if Child.max is None or Child.max > Child.min:
-                    for _ in range(Child.min):
-                        self.append(Child())
+            if isinstance(Child, type) and issubclass(Child, Element) and \
+                    (Child.max is None or Child.max > Child.min):
+                for _ in range(Child.min):
+                    self.append(Child())
 
     def _append(self, cls, *args, **kwargs):
         el = cls(*args, **kwargs)
