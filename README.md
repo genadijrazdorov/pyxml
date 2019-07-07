@@ -137,9 +137,9 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* Genadij Razdorov - [genadijrazdorov](https://github.com/genadijrazdorov)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/genadijrazdorov/pyxml/contributors) who participated in this project.
 
 ## License
 
