@@ -63,39 +63,40 @@ a python ElementTree extension for declarative xml schema with validation.
 ~~~
 
 
+[![Contributor
+Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](code-of-conduct.md)
+
 # Project Title
 
 One Paragraph of project description goes here
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your
+local machine for development and testing purposes. See deployment for notes on
+how to deploy the project on a live system.
 
 ### Prerequisites
 
 What things you need to install the software and how to install them
 
-```
-Give examples
-```
+``` Give examples ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+A step by step series of examples that tell you how to get a development env
+running
 
 Say what the step will be
 
-```
-Give the example
-```
+``` Give the example ```
 
 And repeat
 
-```
-until finished
-```
+``` until finished ```
 
-End with an example of getting some data out of the system or using it for a little demo
+End with an example of getting some data out of the system or using it for a
+little demo
 
 ## Running the tests
 
@@ -105,17 +106,13 @@ Explain how to run the automated tests for this system
 
 Explain what these tests test and why
 
-```
-Give an example
-```
+``` Give an example ```
 
 ### And coding style tests
 
 Explain what these tests test and why
 
-```
-Give an example
-```
+``` Give an example ```
 
 ## Deployment
 
@@ -129,26 +126,39 @@ Add additional notes about how to deploy this on a live system
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read
+[CONTRIBUTING.md](CONTRIBUTING.md) for the process for submitting pull requests
+to us.
+
+Please note that this project is released with a [Contributor Code of
+Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to
+abide by its terms.
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/genadijrazdorov/pyxml/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available,
+see the [tags on this
+repository](https://github.com/genadijrazdorov/pyxml/tags). 
 
 ## Authors
 
 * Genadij Razdorov - [genadijrazdorov](https://github.com/genadijrazdorov)
 
-See also the list of [contributors](https://github.com/genadijrazdorov/pyxml/contributors) who participated in this project.
+See also the list of
+[contributors](https://github.com/genadijrazdorov/pyxml/contributors) who
+participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE)
+file for details
 
 ## Acknowledgments
 
 * Hat tip to anyone whose code was used
-* This README is build on top of the [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2) template
+* This README is build on top of the
+  [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
+  template
 * pyxml was inspired by [SQLAlchemy]()
 * etc
 
