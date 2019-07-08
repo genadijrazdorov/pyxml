@@ -1,36 +1,20 @@
 # pyxml
 
-a python ElementTree extension for declarative xml schema with validation.
+![GitHub](https://img.shields.io/github/license/genadijrazdorov/pyxml.svg)
+![GitHub All Releases](https://img.shields.io/github/downloads/genadijrazdorov/pyxml/total.svg)
+[![Contributor
+Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](code-of-conduct.md)
 
-* xml schema/model declaration (inspired by [SQLAlchemy](https://www.sqlalchemy.org/))
-* Intuitive model to xml schema mapping
-* build on top of [ElementTree](https://docs.python.org/3/library/xml.etree.elementtree.html)
-* separation of model declaration from application logic
-
-### A simple example
-
-~~~python
->>> from pyxml import Element, Attribute
->>> import xml.etree.ElementTree as ET
-
-~~~
-
-#### Declaring a model
+A python ElementTree extension for declarative xml schema with validation.
 
 ~~~python
 >>> class Model(Element):
 ...     name = Attribute(required=True)
 ...
-...     # nested submodel declaration
 ...     class Subelement(Element):
-...         min = 1 # required element
+...         min = 1
 ...
 
-~~~
-
-#### Initializing
-
-~~~python
 >>> model = Model(name='The Model')
 
 >>> print(ET.tostring(model))
@@ -40,21 +24,64 @@ a python ElementTree extension for declarative xml schema with validation.
 
 ~~~
 
-#### Working with a model
+## Features
 
-##### ElementTree way
+* xml schema/model declaration (inspired by [SQLAlchemy](https://www.sqlalchemy.org/))
+* Intuitive model to xml schema mapping
+* build on top of [ElementTree](https://docs.python.org/3/library/xml.etree.elementtree.html)
+* separation of model declaration from application logic
 
-~~~python
->>> model[0].get('name')
-'The Model'
+## Getting Started
 
->>> mode[0].set('name', 'The New Model')
+These instructions will get you a copy of the project up and running on your
+local machine.
+
+### Prerequisites
+
+FIXME
+
+``` Give examples ```
+
+### Installing
+
+Download [distribution](https://github.com/genadijrazdorov/pyxml/releases)
+and install:
+
+~~~bash
+$ python setup.py install
 
 ~~~
 
-##### pyxml way
+#### Short demostration
 
-~~~python
+~~~bash
+$ python
+Python ...
+Type "help", ...
+>>> from pyxml import Element, Attribute
+>>> import xml.etree.ElementTree as ET
+
+>>> # model declaration
+
+>>> class Model(Element):
+...     name = Attribute(required=True)
+...
+...     # nested submodel declaration
+...     class Subelement(Element):
+...         min = 1 # required element
+...
+
+>>> # model initialization
+
+>>> model = Model(name='The Model')
+
+>>> print(ET.tostring(model))
+<Model name="The Model">
+    <Subelement />
+</Model>
+
+>>> # working with model
+
 >>> model.submodel.name
 'The Model'
 
@@ -63,56 +90,12 @@ a python ElementTree extension for declarative xml schema with validation.
 ~~~
 
 
-[![Contributor
-Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](code-of-conduct.md)
-
-# Project Title
-
-One Paragraph of project description goes here
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your
-local machine for development and testing purposes. See deployment for notes on
-how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-``` Give examples ```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env
-running
-
-Say what the step will be
-
-``` Give the example ```
-
-And repeat
-
-``` until finished ```
-
-End with an example of getting some data out of the system or using it for a
-little demo
-
 ## Running the tests
 
-Explain how to run the automated tests for this system
+~~~bash
+$ python setup.py test
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-``` Give an example ```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-``` Give an example ```
+~~~
 
 ## Contributing
 
