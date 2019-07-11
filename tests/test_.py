@@ -1,4 +1,5 @@
-from pyxml.element import Element, Tree, Attribute
+from pyxml.element import Element, Tree
+from pyxml.attribute import Attribute
 
 import pytest
 
