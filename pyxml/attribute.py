@@ -1,4 +1,5 @@
-from .element import Element
+# from .element import Element
+import xml.etree.ElementTree as ET
 import weakref
 
 
@@ -22,7 +23,8 @@ class Attribute:
             return self.value[instance]
 
         except KeyError:
-            value = super(Element, instance).get(self.name[owner])
+            # value = super(Element, instance).get(self.name[owner])
+            value = ET.Element.get(instance, self.name[owner])
             if value is not None:
                 value = self.decode(value)
             self.value[instance] = value
@@ -32,11 +34,16 @@ class Attribute:
         self.value[instance] = value
 
         cls = instance.__class__
-        super(Element, instance).set(self.name[cls], self.encode(value))
+
+        # FIXME: which is better?
+        # super(Element, instance).set(self.name[cls], self.encode(value))
+        ET.Element.set(instance, self.name[cls], self.encode(value))
 
     def __delete__(self, instance):
         cls = instance.__class__
-        super(Element, instance).set(self.name[cls], None)
+        # FIXME: should delete not set to None
+        # super(Element, instance).set(self.name[cls], None)
+        ET.Element.set(instance, self.name[cls], None)
         del self.value[instance]
 
     def __set_name__(self, owner, name):
