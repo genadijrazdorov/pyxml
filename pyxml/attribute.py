@@ -41,6 +41,7 @@ class Attribute:
 
     def __delete__(self, instance):
         cls = instance.__class__
+
         # FIXME: should delete not set to None
         # super(Element, instance).set(self.name[cls], None)
         ET.Element.set(instance, self.name[cls], None)
