@@ -8,6 +8,17 @@ class Element(ET.Element):
     min = 0
     max = None
 
+    encode = str
+    decode = str
+
+    @property
+    def value(self):
+        return self.decode(self.text)
+
+    @value.setter
+    def value(self, value):
+        self.text = self.encode(value)
+
     def __init__(self, attrib=None, **extra):
         if attrib is None:
             attrib = {}

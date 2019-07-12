@@ -54,6 +54,25 @@ class TestElementNew:
         assert subelement.get('proba') == 'Proba'
         assert simple[-1] is subelement
 
+    def test_value_get(self, simple):
+        simple.text = 'TEXT'
+        assert simple.value == 'TEXT'
+
+    def test_value_get_int(self, simple):
+        simple.decode = int
+        simple.text = '1'
+        assert simple.value == 1
+
+    def test_value_set(self, simple):
+        simple.value = 'TEXT'
+        assert simple.text == 'TEXT'
+
+    def test_value_set_int(self, simple):
+        simple.decode = int
+        simple.value = 1
+        assert simple.text == '1'
+
+
 class TestAttribute:
     def test__init__(self, simple):
         assert simple in simple.__class__.name.value
