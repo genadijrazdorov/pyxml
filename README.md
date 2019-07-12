@@ -30,6 +30,7 @@ A python ElementTree extension for declarative xml schema with validation.
 * Intuitive model to xml schema mapping
 * build on top of [ElementTree](https://docs.python.org/3/library/xml.etree.elementtree.html)
 * separation of model declaration from application logic
+* native typing of attributes and text attribute
 
 ## Getting Started
 
@@ -68,7 +69,8 @@ Type "help", ...
 ...
 ...     # nested submodel declaration
 ...     class Subelement(Element):
-...         min = 1 # required element
+...	    min = 1 # required element
+...	    rank = Attribute(decode=int)
 ...
 
 >>> # model initialization
@@ -82,10 +84,18 @@ Type "help", ...
 
 >>> # working with model
 
->>> model.submodel.name
-'The Model'
+>>> model.name = 'The New Model'
+>>> model.name
+'The New Model'
 
->>> mode.submodel.name = 'The New Model'
+>>> model.subelement.rank = 0
+>>> model.subelement.rank
+0
+
+>>> print(ET.tostring(model))
+<Model name="The New Model">
+    <Subelement rank="0"/>
+</Model>
 
 ~~~
 

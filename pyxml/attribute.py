@@ -10,9 +10,13 @@ class Attribute:
     encode = str
     decode = str
 
-    def __init__(self, required=None):
+    def __init__(self, required=None, encode=None, decode=None):
         if required is not None:
             self.required = required
+        if encode is not None:
+            self.encode = encode
+        if decode is not None:
+            self.decode = decode
         self.value = weakref.WeakKeyDictionary()
 
     def __get__(self, instance, owner):
