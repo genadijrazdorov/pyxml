@@ -3,7 +3,30 @@ import functools
 
 
 class Element(ET.Element):
-    """
+    """Extended `Element`:py:class: from `ElementTree`:py:module:
+
+    Notes
+    -----
+    Should be subclassed to harness all the power of `pyxml`.
+
+    Parameters
+    ----------
+    attrib : dict(key: value)
+        Attributes
+    **extra
+        Extra attributes
+
+    Attributes
+    ----------
+    min : `int`, default: 0
+        Required number of `Element`:py:class: instances
+    max : `int` or `None`, default: `None`
+        Maximal number of `Element`:py:class: instances or unlimited
+    encode : `callable`, default: `str`
+        Returns encoded `value`:py:attr:
+    decode : `callable`, default: `str`
+        Returns decoded `text`:py:attr:
+
     """
     min = 0
     max = None
@@ -13,6 +36,7 @@ class Element(ET.Element):
 
     @property
     def value(self):
+        """obj: Value of Element.text"""
         return self.decode(self.text)
 
     @value.setter
@@ -41,11 +65,15 @@ class Element(ET.Element):
                 for _ in range(Child.min):
                     self.append(Child())
 
-    def get(self, attribute):
-        return getattr(self, attribute)
+    def get(self, key, default=None):
+        return getattr(self, key) or default
 
-    def set(self, attribute, value):
-        setattr(self, attribute, value)
+    get.__doc__ = ET.Element.get.__doc__
+
+    def set(self, key, value):
+        setattr(self, key, value)
+
+    set.__doc__ = ET.Element.set.__doc__
 
     def _append(self, cls, *args, **kwargs):
         el = cls(*args, **kwargs)

@@ -4,8 +4,29 @@ import weakref
 
 
 class Attribute:
+    """Data descriptor handling attributes for `Element`:py:class
+
+    Parameters
+    ----------
+    required : `bool`, default: `Attribute.required`:py:attr:
+        Attribute is required attribute
+    encode : `callable`, default: `Attribute.encode`:py:attr:
+        Returns encoded value of `Attribute`:py:class: instance
+    decode: `callable`, default: `Attribute.decode`:py:attr:
+        Returns decoded value of `Attribute`:py:class: instance
+
+    Attributes
+    ----------
+    required : `bool`, default: `False`
+        `Attribute` is required
+    encode : `callable`, default: `str`:py:func:
+        Returns encoded value of `Attribute`:py:class: instance
+    decode : `callable`, default: `str`:py:func:
+        Returns decoded value of `Attribute`:py:class: instance
+
+
+    """
     required = False
-    value = None
     name = {}
     encode = str
     decode = str
