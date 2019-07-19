@@ -55,7 +55,7 @@ $ python setup.py install
 
 #### Short demostration
 
-~~~bash
+~~~python
 $ python
 Python ...
 Type "help", ...
