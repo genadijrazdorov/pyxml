@@ -3,7 +3,7 @@
 [![GitHub](https://img.shields.io/github/license/genadijrazdorov/pyxml.svg)](LICENSE)
 [![GitHub All Releases](https://img.shields.io/github/downloads/genadijrazdorov/pyxml/total.svg)](https://github.com/genadijrazdorov/pyxml/releases)
 [![Contributor
-Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](code-of-conduct.md)
+Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
 A python ElementTree extension for declarative xml schema with validation.
 
